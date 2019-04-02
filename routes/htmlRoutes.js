@@ -22,7 +22,13 @@ module.exports = function(app) {
 
   // Load pdr page
   app.get("/pdr", function(req, res) {
-    res.render("pdr", {});
+    res.render("pdr", {
+      pdr: pdrObject
+    });
+  });
+
+  app.post("/pdr/create", function(req, res) {
+    res.json(req.body)
   });
 
   // Load login  page
