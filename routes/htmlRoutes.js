@@ -20,13 +20,20 @@ module.exports = function(app) {
     });
   });
 
-    // Load pdr page
-    app.get("/pdr", function(req, res) {
-      db.Example.findAll({}).then(function(dbExamples) {
-        res.render("pdr", {
-        });
-      });
-    });
+  // Load pdr page
+  app.get("/pdr", function(req, res) {
+    res.render("pdr", {});
+  });
+
+  // Load login  page
+  app.get("/api/login", function(req, res) {
+    res.render("login", {});
+  });
+
+  // Load driver reports page
+  app.get("/api/driverReports", function(req, res) {
+    res.render("driverReport", {});
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
