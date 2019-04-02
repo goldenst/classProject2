@@ -1,3 +1,17 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  text-align: center;
+}
+
+.container-inner {
+  text-align: center;
+  padding: 10px;
+}
+
+.container {
+  text-align: center;
+  background-color: lightgray;
+}
