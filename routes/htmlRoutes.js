@@ -1,9 +1,9 @@
 var db = require("../models");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Load index page
-  app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
+  app.get("/", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Welcome!",
         examples: dbExamples
@@ -12,12 +12,12 @@ module.exports = function (app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function (req, res) {
+  app.get("/example/:id", function(req, res) {
     db.Example.findOne({
       where: {
         id: req.params.id
       }
-    }).then(function (dbExample) {
+    }).then(function(dbExample) {
       res.render("example", {
         example: dbExample
       });
@@ -25,38 +25,43 @@ module.exports = function (app) {
   });
 
   // Load pdr page
-  app.get("/pdr", function (req, res) {
+  app.get("/pdr", function(req, res) {
     res.render("pdr", {
       pdr: pdrObject
     });
   });
 
-  app.post("/pdr/create", function (req, res) {
+  app.post("/pdr/create", function(req, res) {
     res.json(req.body)
   });
 
   // Load login  page
-  app.get("/api/login", function (req, res) {
+  app.get("/api/login", function(req, res) {
     res.render("login", {});
   });
 
   // Load driver reports page
-  app.get("/api/driverReports", function (req, res) {
+  app.get("/api/driverReports", function(req, res) {
     res.render("driverReport", {});
   });
 
   // Load driver log page
-  app.get("/api/driverLog", function (req, res) {
+  app.get("/api/driverLog", function(req, res) {
     res.render("driverLog", {});
   });
 
   // Load cash tag page
-  app.get("/api/cashtag", function (req, res) {
+  app.get("/api/cashtag", function(req, res) {
     res.render("CashTag", {});
   });
 
+  // Load pre trip page
+  app.get("/api/pre", function(req, res) {
+    res.render("preTrip", {});
+  });
+
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
+  app.get("*", function(req, res) {
     res.render("404");
   });
 };
