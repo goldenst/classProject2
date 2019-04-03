@@ -1,0 +1,95 @@
+<h2>Driver daily log</h2>
+
+<div class="container">
+  <form>
+    <div class="form-row">
+      <div class="col-4">
+        <label>Driver</label>
+        <input type="text" class="form-control" placeholder="Driver">
+      </div>
+      <div class="col-4">
+        <label>AAA / Tag #</label>
+        <input type="text" class="form-control" placeholder="AAA Call # / Cash Tag #">
+      </div>
+      <div class="col-4">
+        <label>Date</label>
+        <input type="date" class="form-control">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="col-4">
+        <label>AAA Member Num</label>
+        <input type="text" class="form-control" placeholder="Mem Num">
+      </div>
+      <div class="col-4">
+        <label>Miles to veh</label>
+        <input type="text" class="form-control" placeholder="MTV">
+      </div>
+      <div class="col-4">
+        <label>Towed Miles</label>
+        <input type="text" class="form-control" placeholder="Towed Miles">
+      </div>
+    </div>
+    <br>
+    <div class="form-row">
+      <div class="col-4">
+        <select class="custom-select" id="inputGroupSelect02">
+          <option selected>Requested by</option>
+          <option value="1">AAA</option>
+          <option value="2">Shop</option>
+          <option value="3">CHP</option>
+        </select>
+      </div>
+
+      <div class="col-4">
+        <select class="custom-select" id="inputGroupSelect02">
+          <option selected>Service Performed</option>
+          <option value="1">Tow</option>
+          <option value="2">Jump</option>
+          <option value="3">Fuel</option>
+        </select>
+      </div>
+      <div class="col-4">
+        <select class="custom-select" id="inputGroupSelect02">
+          <option selected>AAA Mem Type</option>
+          <option value="1">Basic</option>
+          <option value="2">Plus</option>
+          <option value="3">Premier</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-4">
+        <label>Enroute</label>
+        <input type="time" class="form-control" placeholder="Enroute">
+      </div>
+      <div class="col-4">
+        <label>Clear</label>
+        <input type="time" class="form-control" placeholder="Clear">
+      </div>
+      <div class="col-4">
+        <label>Time on scene</label>
+        <input type="text" class="form-control" placeholder="Time on scene">
+      </div>
+    </div>
+    <label>Driver Notes</label>
+    <input type="text-area" class="form-control" placeholder="Driver Comments">
+    <br>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="pdr" value="option1">
+      <label class="form-check-label" for="inlineCheckbox1">PDR Filed</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <label class="form-check-label" for="inlineCheckbox2">t-13</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+      <label class="form-check-label" for="inlineCheckbox3">extra charges</label>
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <br><br>
+  </form>
+</div>
