@@ -1,35 +1,17 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-
   <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
+<script src="/js/pdr.js"></script>
   <title>Home Page</title>
 </head>
-
 <body>
   {{{body}}}
-
-  <script>
-    $("#pdrSubmit").on("click", function(e) {
-      e.preventDefault()
-      var pdrObject = {
-        call_number: $("#callNumber").val().trim(),
-        date: $("#date").val().trim(),
-        driver: $("#driver").val().trim(),
-        damages: &("#damages").val().trim(),
-      }
-      $.post("/pdr/create", pdrObject).then(function(data) {
-        res.json(data)
-      })
-    })
-  </script>
 </body>
-
 </html>
