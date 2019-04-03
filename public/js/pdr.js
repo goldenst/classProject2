@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#pdrSubmit").on("click", function(e) {
+  $("#pdrSubmit").on("click", function (e) {
     e.preventDefault();
 
     var newCallNum = $("#callNumber").val().trim();
@@ -28,7 +28,7 @@ $(document).ready(function () {
     $.ajax({
       method: "DELETE",
       url: "/pdr/destroy/" + thisId
-    }).then(function(response) {
+    }).then(function (response) {
       location.reload();
     });
   });

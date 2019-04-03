@@ -68,10 +68,10 @@ module.exports = function (app) {
   // Delete an driverlog entry by id
   app.delete("/api/pdr/:id", function (req, res) {
     db.driver_Log.destroy({
-        where: {
-          id: req.params.id
-        }
-      })
+      where: {
+        id: req.params.id
+      }
+    })
       .then(function (dbdriver_Log) {
         res.json(dbdriver_Log);
       });
