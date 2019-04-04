@@ -53,27 +53,63 @@ module.exports = function (app) {
   // ---------------------------------------------Driver log routes ---------------------------
   // Get all driver log data
   app.get("/api/driverlog", function (req, res) {
-    db.driver_Log.findAll().then(function (dbdriver_Log) {
-      res.json(dbdriver_Log);
+    db.Driver_log.findAll().then(function (dbDriver_log) {
+      res.json(dbDriver_log);
     });
   });
 
   // Create a new driver log entry
   app.post("/api/Driverlog", function (req, res) {
-    db.driver_Log.create(req.body).then(function (dbdriver_Log) {
-      res.json(dbdriver_Log);
+    db.Driver_log.create(req.body).then(function (dbDriver_log) {
+      res.json(dbDriver_log);
     });
   });
 
   // Delete an driverlog entry by id
-  app.delete("/api/pdr/:id", function (req, res) {
+  app.delete("/api/driverLog/:id", function (req, res) {
     db.driver_Log.destroy({
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(function (dbdriver_Log) {
-        res.json(dbdriver_Log);
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(function (dbDriver_log) {
+        res.json(dbDriver_log);
       });
+  });
+
+
+  // ----------------------------------------- Daily Work -------------------------
+  // Get all daily log data
+  app.get("/api/dailylog", function (req, res) {
+    db.Daily.findAll().then(function (dbDaily) {
+      res.json(dbDaily);
+    });
+  });
+
+  // Create a new daily log entry
+  app.post("/api/dailylog", function (req, res) {
+    db.Daily.create(req.body).then(function (dbDaily) {
+      res.json(dbDaily);
+    });
+  });
+
+  // Delete an daily log entry by id
+  app.delete("/api/dailyLog/:id", function (req, res) {
+    db.Daily.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(function (dbDaily) {
+        res.json(dbDaily);
+      });
+  });
+
+  //  ---------------------- AAA icp reports  IM CRAZY TO GET THIS DONE   DO LATER NEED MORE TIME ---------
+
+  app.get("/api/reports", function (req, res) {
+    db.aaa_icp.findAll().then(function (dbaaa_icp) {
+      res.json(dbaaa_icp);
+    });
   });
 };

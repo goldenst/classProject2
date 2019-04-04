@@ -74,7 +74,7 @@ module.exports = function (app) {
   // ---------------------------------------------------------driver Log
   // Load driver log page
   app.get("/driverLog", function (req, res) {
-    db.driver_log.findAll().then(function (dbdriver_log) {
+    db.Driver_log.findAll().then(function (dbdriver_log) {
       res.render("driverLog", {
         driverLog: dbdriver_log
       });
@@ -87,7 +87,7 @@ module.exports = function (app) {
       where: {
         id: req.params.id
       }
-    }).then (function (dbdriver_log) {
+    }).then(function (dbdriver_log) {
       res.render("driverLog", {
         driverLog: dbdriver_log
       });
@@ -95,27 +95,73 @@ module.exports = function (app) {
   });
 
   app.post("/driverlog/create", function (req, res) {
-    db.Pdr.create({
-      driver: req.body.driver,
-      aaaTag: req.body.aaaTag,
-      date: req.body.date,
-      aaa_mem_num: req.body.aaa_mem_num
+    db.Driver_log.create({
+      // driver: req.body.driver,
+      // aaaTag: req.body.aaaTag,
+      // date: req.body.date,
+      // aaa_mem_num: req.body.aaa_mem_num
     }).then(function (dbdriver_log) {
       console.log(dbdriver_log);
       res.redirect("/driverLog");
     });
   });
 
-  // app.delete("/pdr/destroy/:id", function (req, res) {
-  //   db.Pdr.destroy({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(function (dbPdr) {
-  //     console.log(dbPdr);
-  //     res.json(dbPdr);
-  //   });
-  // });
+  app.delete("/driverlog/destroy/:id", function (req, res) {
+    db.Driver_log.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbdriver_log) {
+      console.log(dbdriver_log);
+      res.json(dbdriver_log);
+    });
+  });
+
+  // ---------------------------------------------------- Daily Work
+  // Load Daily page
+  app.get("/daily", function (req, res) {
+    db.Daily.findAll().then(function (dbDaily) {
+      res.render("dailywork", {
+        dailyWork: dbDaily
+      });
+    });
+  });
+
+  // Load example page and pass in an example by id
+  app.get("/driverLog/:id", function (req, res) {
+    db.Daily.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbDaily) {
+      res.render("driverLog", {
+        dailyWork: dbDaily
+      });
+    });
+  });
+
+  app.post("/daily/create", function (req, res) {
+    db.Daily.create({
+      // driver: req.body.driver,
+      // aaaTag: req.body.aaaTag,
+      // date: req.body.date,
+      // aaa_mem_num: req.body.aaa_mem_num
+    }).then(function (dbDaily) {
+      console.log(dbDaily);
+      res.redirect("/dailywork");
+    });
+  });
+
+  app.delete("/daily/destroy/:id", function (req, res) {
+    db.Daily.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbDaily) {
+      console.log(dbDaily);
+      res.json(dbDaily);
+    });
+  });
 
   // ------------------------------------------------- Load login  page
   app.get("/api/login", function (req, res) {
@@ -123,7 +169,7 @@ module.exports = function (app) {
   });
 
   // -------------------------------------------------Load driver reports page
-  app.get("/driverReport", function (req, res) {
+  app.get("/reports", function (req, res) {
     res.render("driverReport", {});
   });
 

@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  var Driver_log = sequelize.define("Driver_log", {
+  var driver_log = sequelize.define("Driver_log", {
     driver: DataTypes.STRING,
     aaaTag: DataTypes.INTEGER,
     date: DataTypes.DATEONLY,
@@ -14,5 +14,5 @@ module.exports = function (sequelize, DataTypes) {
     tos: DataTypes.INTEGER,
     dnotes: DataTypes.STRING
   });
-  return Driver_log;
+  return driver_log;
 };
