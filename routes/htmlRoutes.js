@@ -53,7 +53,8 @@ module.exports = function (app) {
       aaa_call_num: req.body.aaa_call_num,
       driver: req.body.driver,
       date: req.body.date,
-      damages: req.body.damages
+      damages: req.body.damages,
+      signature: req.body.signature
     }).then(function (dbPdr) {
       console.log(dbPdr);
       res.redirect("/pdr");
@@ -74,34 +75,45 @@ module.exports = function (app) {
   // ---------------------------------------------------------driver Log
   // Load driver log page
   app.get("/driverLog", function (req, res) {
-    db.Driver_log.findAll().then(function (dbdriver_log) {
+    db.Driver_log.findAll().then(function (dbDriver_log) {
       res.render("driverLog", {
-        driverLog: dbdriver_log
+        driverLog: dbDriver_log
       });
     });
   });
 
   // Load example page and pass in an example by id
   app.get("/driverLog/:id", function (req, res) {
-    db.dbdriver_log.findOne({
+    db.Driver_log.findOne({
       where: {
         id: req.params.id
       }
-    }).then(function (dbdriver_log) {
+    }).then(function (dbDriver_log) {
       res.render("driverLog", {
-        driverLog: dbdriver_log
+        driverLog: dbDriver_log
       });
     });
   });
 
   app.post("/driverlog/create", function (req, res) {
     db.Driver_log.create({
-      // driver: req.body.driver,
-      // aaaTag: req.body.aaaTag,
-      // date: req.body.date,
-      // aaa_mem_num: req.body.aaa_mem_num
-    }).then(function (dbdriver_log) {
-      console.log(dbdriver_log);
+      driver: req.body.driver,
+      aaaTag: req.body.aaaTag,
+      date: req.body.date,
+      aaa_mem_num: req.body.aaa_mem_num,
+      mtv: req.body.mtv,
+      tow_miles: req.body.tow_miles,
+      req_by: req.body.req_by,
+      svc_perf: req.body.req_by,
+      svc_perf: req.body.svc_perf,
+      aaa_mem_num: req.body.aaa_mem_num,
+      enroute: req.body.enroute,
+      clear: req.body.clear,
+      tos: req.body.tos,
+      dnotes: req.body.dnotes
+
+    }).then(function (dbDriver_log) {
+      console.log(dbDriver_log);
       res.redirect("/driverLog");
     });
   });
@@ -111,9 +123,9 @@ module.exports = function (app) {
       where: {
         id: req.params.id
       }
-    }).then(function (dbdriver_log) {
-      console.log(dbdriver_log);
-      res.json(dbdriver_log);
+    }).then(function (dbDriver_log) {
+      console.log(dbDriver_log);
+      res.json(dbDriver_log);
     });
   });
 

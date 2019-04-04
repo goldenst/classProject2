@@ -1,40 +1,40 @@
-<h2>Driver daily log</h2>
 
 <div class="container">
+  <h2>Driver daily log</h2>
   <form>
     <div class="form-row">
       <div class="col-4">
         <label>Driver</label>
-        <input type="text" class="form-control" placeholder="Driver">
+        <input type="text" class="form-control" placeholder="Driver" id="driver">
       </div>
       <div class="col-4">
         <label>AAA / Tag #</label>
-        <input type="text" class="form-control" placeholder="AAA Call # / Cash Tag #">
+        <input type="text" class="form-control" placeholder="AAA Call # / Cash Tag #" id="tag">
       </div>
       <div class="col-4">
         <label>Date</label>
-        <input type="date" class="form-control">
+        <input type="date" class="form-control" id="date">
       </div>
     </div>
 
     <div class="form-row">
       <div class="col-4">
         <label>AAA Member Num</label>
-        <input type="text" class="form-control" placeholder="Mem Num">
+        <input type="text" class="form-control" placeholder="Mem Num" id="mem_num">
       </div>
       <div class="col-4">
         <label>Miles to veh</label>
-        <input type="text" class="form-control" placeholder="MTV">
+        <input type="text" class="form-control" placeholder="MTV" id="mtv">
       </div>
       <div class="col-4">
         <label>Towed Miles</label>
-        <input type="text" class="form-control" placeholder="Towed Miles">
+        <input type="text" class="form-control" placeholder="Towed Miles" id="tm">
       </div>
     </div>
     <br>
     <div class="form-row">
       <div class="col-4">
-        <select class="custom-select" id="inputGroupSelect02">
+        <select class="custom-select" id="reqBy">
           <option selected>Requested by</option>
           <option value="1">AAA</option>
           <option value="2">Shop</option>
@@ -43,7 +43,7 @@
       </div>
 
       <div class="col-4">
-        <select class="custom-select" id="inputGroupSelect02">
+        <select class="custom-select" id="serPer">
           <option selected>Service Performed</option>
           <option value="1">Tow</option>
           <option value="2">Jump</option>
@@ -51,7 +51,7 @@
         </select>
       </div>
       <div class="col-4">
-        <select class="custom-select" id="inputGroupSelect02">
+        <select class="custom-select" id="memType">
           <option selected>AAA Mem Type</option>
           <option value="1">Basic</option>
           <option value="2">Plus</option>
@@ -62,34 +62,34 @@
     <div class="form-row">
       <div class="col-4">
         <label>Enroute</label>
-        <input type="time" class="form-control" placeholder="Enroute">
+        <input type="time" class="form-control" placeholder="Enroute" id="er">
       </div>
       <div class="col-4">
         <label>Clear</label>
-        <input type="time" class="form-control" placeholder="Clear">
+        <input type="time" class="form-control" placeholder="Clear" id="clear">
       </div>
       <div class="col-4">
         <label>Time on scene</label>
-        <input type="text" class="form-control" placeholder="Time on scene">
+        <input type="text" class="form-control" placeholder="Time on scene" id="tos">
       </div>
     </div>
     <label>Driver Notes</label>
-    <textarea class="form-control" aria-label="With textarea" placeholder="Drivers Notes"></textarea>
+    <textarea class="form-control" aria-label="With textarea" placeholder="Drivers Notes" id="notes"></textarea>
     <br>
     <div class="form-check form-check-inline">
       <input class="form-check-input" type="checkbox" id="pdr" value="option1">
       <label class="form-check-label" for="inlineCheckbox1">PDR Filed</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+      <input class="form-check-input" type="checkbox" id="bounty" value="option2">
       <label class="form-check-label" for="inlineCheckbox2">t-13</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+      <input class="form-check-input" type="checkbox" id="excharg" value="option3">
       <label class="form-check-label" for="inlineCheckbox3">extra charges</label>
     </div>
     <hr>
-    <button id="drlogSubmit" type="submit" class="btn btn-primary">Submit</button>
+    <button id="driverLogSubmit" type="submit" class="btn btn-danger">Submit</button>
     <br><br>
   </form>
 </div>
@@ -97,7 +97,7 @@
   <!--To display some log data-->
 
   {{!-- fix  --}}
-  {{!-- <h5>PDR data:</h5>
+  <h5>Driver Log Submitted:</h5>
         <ul id="pdr-list" class="list-group">
           {{#each pdr}}
           <li data-id="{{this.id}}" class="list-group-item">
@@ -107,4 +107,4 @@
             <button data-id={{this.id}} class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
-        </ul> --}}
+        </ul>

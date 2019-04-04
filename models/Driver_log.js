@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  var driver_log = sequelize.define("Driver_log", {
+  var Driver_log = sequelize.define("Driver_log", {
     driver: DataTypes.STRING,
     aaaTag: DataTypes.INTEGER,
     date: DataTypes.DATEONLY,
@@ -12,7 +12,10 @@ module.exports = function (sequelize, DataTypes) {
     enroute: DataTypes.TIME,
     clear: DataTypes.TIME,
     tos: DataTypes.INTEGER,
-    dnotes: DataTypes.STRING
+    dnotes: DataTypes.STRING,
+    // pdr_filed: DataTypes.BOOLIAN,
+    // bounty: DataTypes.BOOLIAN,
+    // ex_charge: DataTypes.BOOLIAN
   });
-  return driver_log;
+  return Driver_log;
 };
