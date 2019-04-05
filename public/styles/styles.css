@@ -16,3 +16,11 @@ body {
   background-color: lightgray;
   margin-top: 20px;
 }
+
+.daily-date {
+  margin-left: 30%;
+}
+
+input {
+  text-align: center;
+}

@@ -180,6 +180,12 @@ module.exports = function (app) {
     res.render("login", {});
   });
 
+  // ------------------------------------------------- Load Pre Trip page
+  app.get("/preTrip", function (req, res) {
+    res.render("preTrip", {});
+  });
+
+
   // -------------------------------------------------Load driver reports page
   app.get("/reports", function (req, res) {
     res.render("driverReport", {});

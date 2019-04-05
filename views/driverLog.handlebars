@@ -99,10 +99,10 @@
   {{!-- fix  --}}
   <h5>Driver Log Submitted:</h5>
         <ul id="pdr-list" class="list-group">
-          {{#each pdr}}
+          {{#each driverlog}}
           <li data-id="{{this.id}}" class="list-group-item">
             <span>
-            <p id="driver-{{this.id}}">Driver: {{this.driver}}  | Call Number: {{this.aaa_call_num}} | Damages: {{this.damages}}  |  Date: {{this.date}}</p>
+            <p id="driver-{{this.id}}">Driver: {{this.driver}}  | Call Number: {{this.aaa_call_num}} |  Date: {{this.date}} | Requested By {{this.req_by}}</p>
             </span>
             <button data-id={{this.id}} class="btn btn-danger float-right delete">ｘ</button>
           </li>
