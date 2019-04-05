@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Daily = sequelize.define("Daily", {
     date: DataTypes.DATEONLY,
     aaa_paid_sac: DataTypes.INTEGER,

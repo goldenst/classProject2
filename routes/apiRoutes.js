@@ -112,4 +112,30 @@ module.exports = function (app) {
       res.json(dbaaa_icp);
     });
   });
+
+  //  ----------------------------------------------- daily work ROUTES -----------------------------
+  // Get all daily data
+  app.get("/api/Daily", function (req, res) {
+    db.Daily.findAll().then(function (dbDaily) {
+      res.json(dbDaily);
+    });
+  });
+
+  // Create a new Daily entry
+  app.post("/api/Daily", function (req, res) {
+    db.Daily.create(req.body).then(function (dbDaily) {
+      res.json(dbDaily);
+    });
+  });
+
+  // Delete an Daily entry by id
+  app.delete("/api/Daily/:id", function (req, res) {
+    db.Daily.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbDaily) {
+      res.json(dbDaily);
+    });
+  });
 };
