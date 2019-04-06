@@ -56,7 +56,7 @@ module.exports = function (app) {
       damages: req.body.damages,
       signature: req.body.signature
     }).then(function (dbPdr) {
-      console.log(dbPdr);
+     //console.log(dbPdr);
       res.redirect("/pdr");
     });
   });
@@ -67,7 +67,7 @@ module.exports = function (app) {
         id: req.params.id
       }
     }).then(function (dbPdr) {
-      console.log(dbPdr);
+     // console.log(dbPdr);
       res.json(dbPdr);
     });
   });
@@ -113,7 +113,7 @@ module.exports = function (app) {
       dnotes: req.body.dnotes
 
     }).then(function (dbDriver_log) {
-      console.log(dbDriver_log);
+     // console.log(dbDriver_log);
       res.redirect("/driverLog");
     });
   });
@@ -124,7 +124,7 @@ module.exports = function (app) {
         id: req.params.id
       }
     }).then(function (dbDriver_log) {
-      console.log(dbDriver_log);
+      //console.log(dbDriver_log);
       res.json(dbDriver_log);
     });
   });
@@ -159,7 +159,7 @@ module.exports = function (app) {
       // date: req.body.date,
       // aaa_mem_num: req.body.aaa_mem_num
     }).then(function (dbDaily) {
-      console.log(dbDaily);
+      //console.log(dbDaily);
       res.redirect("/dailywork");
     });
   });
@@ -171,7 +171,7 @@ module.exports = function (app) {
       }
     }).then(function (dbDaily) {
       console.log(dbDaily);
-      res.json(dbDaily);
+      //res.json(dbDaily);
     });
   });
 

@@ -79,12 +79,28 @@ module.exports = function (app) {
 
 
   // ----------------------------------------- Daily Work -------------------------
-  // Get all daily log data
+  // counts records
+  // app.get("/api/dailylog", function (req, res) {
+  //   db.Daily.count({attributes: ["aaa_paid_sac"] }).then(function (dbDaily) {
+  //     res.json(dbDaily);
+  //   });
+  // });
+
   app.get("/api/dailylog", function (req, res) {
-    db.Daily.findAll().then(function (dbDaily) {
+    db.Daily.count({attributes: ["aaa_paid_sac"] }).then(function (dbDaily) {
+      sum = dbDaily / 10;
+      console.log(sum);
       res.json(dbDaily);
     });
   });
+
+
+  // Get all daily log data
+  // app.get("/api/dailylog", function (req, res) {
+  //   db.Daily.findAll().then(function (dbDaily) {
+  //     res.json(dbDaily);
+  //   });
+  // });
 
   // Create a new daily log entry
   app.post("/api/dailylog", function (req, res) {
@@ -113,5 +129,5 @@ module.exports = function (app) {
     });
   });
 
- 
+
 };
