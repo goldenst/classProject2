@@ -86,24 +86,38 @@ module.exports = function (app) {
   //   });
   // });
 
-  app.get("/api/dailylog", function (req, res) {
-    db.Daily.count({attributes: ["aaa_paid_sac"] }).then(function (dbDaily) {
-      sum = dbDaily / 10;
-      console.log(sum);
-      res.json(dbDaily);
-    });
-  });
-
-
-  // Get all daily log data
   // app.get("/api/dailylog", function (req, res) {
-  //   db.Daily.findAll().then(function (dbDaily) {
-  //     res.json(dbDaily);
+  //   db.Daily.sum("aaa_paid_sac").then(function (sum) {
+
+  //     console.log(sum);
+  //     res.json(sum);
   //   });
   // });
 
+
+  //Get all daily log data
+  app.get("/api/dailylog", async function (req, res) {
+    var attributs = db.Daily.rawAttributes;
+
+    var columNames = Object.keys(attributs);
+
+    var results = [];
+    await columNames.forEach(function (col) {
+      db.Daily.sum(col).then(function (sum) {
+        console.log(col, sum);
+        results.push({
+          city: col,
+          sum: sum,
+        });
+      });
+    });
+
+    console.log(results);
+    res.json(results);
+  });
+
   // Create a new daily log entry
-  app.post("/api/dailylog", function (req, res) {
+  app.post("/api/daily/create", function (req, res) {
     db.Daily.create(req.body).then(function (dbDaily) {
       res.json(dbDaily);
     });

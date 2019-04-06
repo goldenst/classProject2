@@ -29,41 +29,40 @@ $(document).ready(function () {
     var newYubaInstalls = $("#yubaBatInstalls").val().trim();
     var newDriverErr = $("#driverErrors").val().trim();
     var newDispErr = $("#dispErrors").val().trim();
-    var NewNoUpdate =$("#noUpdate");
+    var NewNoUpdate = $("#noUpdate").val().trim();
 
-    $.ajax("/daily/create", {
-      type: "POST",
-      data: {
-        
-        date: newDate,
-        aaa_paid_sac: newAaasac,
-        aaa_paid_yuba:newAaayuba,
-        rt_over_90: newOver90,
-        missing_ol: newMissing,
-        aaa_sac_rev: newRevsac,
-        aaa_yuba_rev: newRevyuba,
-        aaa_non_rev_sav: newNonsac,
-        aaa_non_rev_yuba: newNonyuba,
-        battery_sales_sac: newBatsac,
-        battery_sales_yuba: newBatyuba,
-        storage_sac: newStoragesac,
-        storage_yuba : newStorageYuba,
-        pd_calls_sac: newPdsac,
-        pd_calls_yuba: newPDyuba,
-        shop_calls_sac: newShopsac,
-        shop_calls_yuba: newShopyuba,
-        drivers_on_duty: newDriverOnDuty,
-        regular_hours: newRegHours,
-        ot_hours: newOtHours,
-        daily_truck_miles: newMiles,
-        battery_installs_sac: newSacInstalls,
-        battery_installs_yuba: newYubaInstalls,
-        driver_clearing_err: newDriverErr,
-        dispatch_clearing_err: newDispErr,
-        not_updating_member: NewNoUpdate
-      }
-    }).then(function () {
-      location.reload();
+    $.post("/api/daily/create", {
+
+      date: newDate,
+      aaa_paid_sac: newAaasac,
+      aaa_paid_yuba: newAaayuba,
+      rt_over_90: newOver90,
+      missing_ol: newMissing,
+      aaa_sac_rev: newRevsac,
+      aaa_yuba_rev: newRevyuba,
+      aaa_non_rev_sav: newNonsac,
+      aaa_non_rev_yuba: newNonyuba,
+      battery_sales_sac: newBatsac,
+      battery_sales_yuba: newBatyuba,
+      storage_sac: newStoragesac,
+      storage_yuba: newStorageYuba,
+      pd_calls_sac: newPdsac,
+      pd_calls_yuba: newPDyuba,
+      shop_calls_sac: newShopsac,
+      shop_calls_yuba: newShopyuba,
+      drivers_on_duty: newDriverOnDuty,
+      regular_hours: newRegHours,
+      ot_hours: newOtHours,
+      daily_truck_miles: newMiles,
+      battery_installs_sac: newSacInstalls,
+      battery_installs_yuba: newYubaInstalls,
+      driver_clearing_err: newDriverErr,
+      dispatch_clearing_err: newDispErr,
+      not_updating_member: NewNoUpdate
+
+    }).then(function (res) {
+      console.log(res);
+      //location.reload();
     });
   });
 
@@ -75,7 +74,7 @@ $(document).ready(function () {
     $.ajax({
       method: "DELETE",
       url: "/daily/destroy/" + thisId
-    }).then(function (response) {
+    }).then(function () {
       location.reload();
     });
   });
