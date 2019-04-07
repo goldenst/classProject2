@@ -1,43 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-<script src="/js/pdr.js"></script>
-<script src="/js/daily.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+ 
+  <script src="/js/pdr.js"></script>
+  <script src="/js/daily.js"></script>
+  <script src="/js/driverLog.js"></script>
+  <script src="/js/charts.js"></script>
+  <script src="/js/reports.js"></script>
+
+  {{!-- charts script --}}
+		<script src= "https://cdn.zingchart.com/zingchart.min.js"></script>
+		<script> zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+		ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9","ee6b7db5b51705a13dc2339db3edaf6d"];</script></head>
+	
+</html>
+
   <title>Home Page</title>
 </head>
+
 <body>
- Disabled
-Copy
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/daily">Daily Work</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/pdr">PDR</a>
-      </li>
-    
-    </ul>
+
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/daily">Daily Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pdr">PDR</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/driverLog">Call Log</a>
+          </li>
+          {{!-- <li class="nav-item">
+        <a class="nav-link" href="/cashTag">Cash Tag</a>
+      </li> --}}
+          <li class="nav-item">
+            <a class="nav-link" href="/preTrip">Pre Trip</a>
+          </li>
+
+
+        </ul>
+      </div>
+    </nav>
   </div>
-</nav>
-  </div>  
 
   {{{body}}}
 </body>
+
 </html>

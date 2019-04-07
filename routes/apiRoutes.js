@@ -97,22 +97,20 @@ module.exports = function (app) {
 
   //Get all daily log data
   app.get("/api/dailylog", async function (req, res) {
-    var attributs = db.Daily.rawAttributes;
-
-    var columNames = Object.keys(attributs);
+    var attributes = db.Daily.rawAttributes;
+    var columnNames = Object.keys(attributes);
 
     var results = [];
-    await columNames.forEach(function (col) {
-      db.Daily.sum(col).then(function (sum) {
-        console.log(col, sum);
+    for (const col of columnNames){
+      let sum = await db.Daily.sum(col);
+        console.log(col);
         results.push({
-          city: col,
+          col: col,
           sum: sum,
         });
-      });
-    });
-
+    }
     console.log(results);
+    
     res.json(results);
   });
 

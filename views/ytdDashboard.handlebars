@@ -1,2 +1,22 @@
-
-<h3>Towing YTD Dash Board</h3>
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+<script id="faceplace-template" type="text/x-handlebars-template">
+  
+  <div class="wrapper">
+    <a href="{{website}}"class="profile-picture"><img src="{{picture.data.url}}" /></a>
+    <img class="cover-photo" src="{{cover.source}}" />
+    <div class="content">
+      <h2 class="name">{{name}}</h2>
+      <p>{{about}}</p>
+    </div>
+    <ul>
+      <li class="chart" data-percent="50"><span>{{checkins}}</span>Checkins</li>
+      <li class="chart" data-percent="80"><span>{{likes}}</span>Likes</li>
+      <li class="chart" data-percent="40"><span>{{were_here_count}}</span>Were Here</li>
+    </ul>
+    <div class="centerDiv">
+      <a class="button" href="{{link}}">Like Us on Facebook</a>
+    </div>
+  </div>
+  
+</script>
+<section id="fbcard"></section>

@@ -14,7 +14,9 @@ body {
 .container {
   text-align: center;
   background-color: lightgray;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-content: center;
 }
 
 .daily-date {
@@ -23,4 +25,70 @@ body {
 
 input {
   text-align: center;
+}
+
+/* charts */
+#main{
+  padding:20px;
+  background-color: #EEF;
+  height: 100%;
+  /* position:absolute; */
+  width: 100%;
+}
+
+table{
+  /* background-color: #fff; */
+}
+
+table .man{
+  color:#36C;
+}
+
+table .woman{
+  color:#C31;
+}
+
+form .form-control{
+  display:inline-block;
+  width:inherit;
+}
+
+.chart{
+  min-height:200px;
+}
+
+td {
+  background-color: lightgray;
+  margin-left: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+}
+
+#curve_chart {
+  background-color: lightgray;
+  margin: 20px;
+}
+
+.container-databox {
+  background-color: lightblue;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.col-sm {
+  border: 1px solid black;
+  width: 200px;
+  margin: 5px;
+  float: left;
+}
+
+#sacscoressac {
+  float: left;
+}
+
+.row-1 {
+  float: left;
+  margin-right: 0px;
+  
+  
 }

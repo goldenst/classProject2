@@ -1,1 +1,253 @@
-calls run
+<div class="container">
+  <h3>YTD Trends and Charts</h3>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['gauge'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var sum = 92;
+
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['CPS', sum],
+        ['Driver', 105],
+        ['Overall', 68],
+        ['Responce', 82]
+
+
+      ]);
+
+      var options = {
+        width: 400, height: 120,
+        greenFrom: 90, greenTo: 100,
+        yellowFrom: 75, yellowTo: 90,
+        minorTicks: 5
+      };
+
+      var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+
+  {{!-- //======================================= sat score guages ======================= --}}
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['gauge'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var sum = 92;
+
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['CPS', sum],
+        ['Driver', 105],
+        ['Overall', 68],
+        ['Responce', 82]
+
+
+      ]);
+
+      var options = {
+        width: 400, height: 120,
+        greenFrom: 90, greenTo: 100,
+        yellowFrom: 75, yellowTo: 90,
+        minorTicks: 5
+      };
+
+      var chart = new google.visualization.Gauge(document.getElementById('chart_div1'));
+
+      chart.draw(data, options);
+    }
+  </script>
+<label>Sat Scores Sac</label>
+    <label>Sat Scores Yuba</label>
+
+  <div class="container">
+     
+    <div class="row-1">
+     
+      <div id="chart_div" style="width: 450px; height: 120px;"></div>
+    </div>
+    <div class="row">
+      
+      <div id="chart_div1" style="width: 450px; height: 120px;"></div>
+    </div>
+  </div>
+
+
+
+
+
+  {{!-- ===============================line graph===================================================== --}}
+  <hr>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['mo', 'calls ran'],
+        ['jan', sum3],
+        ['feb', 1170],
+        ['mar', 660],
+        ['apr', 1030]
+      ]);
+
+      var options = {
+        title: 'AAA Revinue',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart0'));
+
+      chart.draw(data, options);
+    }
+
+  </script>
+{{!-- =======================================================================================
+ --}}
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['mo', 'AAA Revinue'],
+        ['jan', jan],
+        ['feb', 1170],
+        ['mar', 660],
+        ['apr', 1030]
+      ]);
+
+      var options = {
+        title: 'Battery reviue',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart1'));
+
+      chart.draw(data, options);
+    }
+
+
+    var sum3 = 2588;
+
+  </script>
+  {{!-- ========================================================================================= --}}
+
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['mo', 'AAA Revinue'],
+        ['jan', jan],
+        ['feb', 1170],
+        ['mar', 660],
+        ['apr', 1030]
+      ]);
+
+      var options = {
+        title: 'Battery reviue',
+        curveType: 'function',
+        legend: { position: 'bottom' }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart2'));
+
+      chart.draw(data, options);
+    }
+
+
+    var sum3 = 2588;
+
+  </script>
+  <div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div id="curve_chart0" style="width: 250px; height: 150px"></div>
+    </div>
+    <div class="col-4">
+      <div id="curve_chart1" style="width: 250px; height: 150px"></div>
+    </div>
+    <div class="col-4">
+      <div id="curve_chart2" style="width: 250px; height: 150px"></div>
+    </div>
+  </div>
+  </div>
+  
+
+
+  <BR>
+  <hr>
+</div>
+{{!-- =================================================== box data ==================================================== --}}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <p>AAA Calls Sac <br> 4689</p>
+    </div>
+    <div class="col-sm">
+      <p>AAA Calls Yuba <br> 3915</p>
+    </div>
+    <div class="col-sm">
+      <P>AAA Rev Sac <br> $ 290,164</P>
+    </div>
+    <div class="col-sm">
+      <p>AAA Rev Yuba <br>$ 259,065</p>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-sm">
+      <p>Battery Installs Sac <br> 151</p>
+    </div>
+    <div class="col-sm">
+      <p>Battery Installs Yuba <br> 133</p>
+    </div>
+    <div class="col-sm">
+      <P>shop Calls Sac <br> 513</P>
+    </div>
+    <div class="col-sm">
+      <p>Shop Calls Yuba <br>12</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <p>Battery Installs Sac <br> 151</p>
+    </div>
+    <div class="col-sm">
+      <p>Battery Installs Yuba <br> 133</p>
+    </div>
+    <div class="col-sm">
+      <P>shop Calls Sac <br> 513</P>
+    </div>
+    <div class="col-sm">
+      <p>Shop Calls Yuba <br>12</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <p>PD Calls Sac <br> 151</p>
+    </div>
+    <div class="col-sm">
+      <p>PD Cals Yuba <br> 13</p>
+    </div>
+    <div class="col-sm">
+      <P>Avg Calls per Day Sac <br> 50.2</P>
+    </div>
+    <div class="col-sm">
+      <p>Avg Calls per Day Yuba <br>12</p>
+    </div>
+  </div>
+</div>
+</div>
