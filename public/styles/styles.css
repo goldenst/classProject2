@@ -89,6 +89,38 @@ td {
 .row-1 {
   float: left;
   margin-right: 0px;
-  
-  
 }
+
+/* ===============================  login modal */
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0,4)
+}
+
+#modal-content {
+  background-color: #fefefe;
+  margin: 4% auto;
+  border: 1px solid #888888;
+  max-width: 350px;
+}
+
+#close {
+  float: right;
+  margin-right: -15px;
+  margin-top: -15px;
+  font-weight: bold;
+  padding: 0px 7px 7px 0px;
+  border-radius: 100px;
+}
+
+#close:hover, #close:focus {
+text-decoration: none;
+cursor: pointer;
+} 
