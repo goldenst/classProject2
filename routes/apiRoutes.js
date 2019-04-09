@@ -50,6 +50,32 @@ module.exports = function (app) {
       res.json(dbPdr);
     });
   });
+
+  // ------------------------------------- pre trip -------------------------------------
+    // Get all Pre Trip data
+    app.get("/api/pretrip", function (req, res) {
+      db.PreTrip.findAll().then(function (dbPreTrip) {
+        res.json(dbPreTrip);
+      });
+    });
+  
+    // Create a new pre Trip entry
+    app.post("/api/PreTrip", function (req, res) {
+      db.PreTrip.create(req.body).then(function (dbPreTrip) {
+        res.json(dbPreTrip);
+      });
+    });
+  
+    // Delete an Pre Trip entry by id
+    app.delete("/api/PreTrip/:id", function (req, res) {
+      db.PreTrip.destroy({
+        where: {
+          id: req.params.id
+        }
+      }).then(function (dbPreTrip) {
+        res.json(dbPreTrip);
+      });
+    });
   // ---------------------------------------------Driver log routes ---------------------------
   // Get all driver log data
   app.get("/api/driverlog", function (req, res) {
