@@ -1,3 +1,4 @@
+
 var db = require ('../models')
 
  async function updateDailyReports(){

@@ -111,14 +111,7 @@ module.exports = function (app) {
       res.json(dbDaily);
     });
   });
-
-  // app.get("/api/dailylog", function (req, res) {
-  //   db.Daily.sum("aaa_paid_sac").then(function (sum) {
-
-  //     console.log(sum);
-  //     res.json(sum);
-  //   });
-  // });
+  
 
 
   //Get all daily log data
@@ -154,6 +147,21 @@ module.exports = function (app) {
       .then(function (dbDaily) {
         res.json(dbDaily);
       });
+  });
+
+  // ====================== driver stats==============================================
+   // Create a new driver stats entry
+  //  app.post("/api/Driversats", function (req, res) {
+  //   db.DriverSats.create(req.body).then(function (dbDriverSats) {
+  //     res.json(dbDriverSats);
+  //   });
+  // });
+
+  // Get all driver stats data
+  app.get("/api/driversats", function (req, res) {
+    db.DriverSats.findAll().then(function (dbDriverSats) {
+      res.json(dbDriverSats);
+    });
   });
 
   //  ---------------------- AAA icp reports  IM CRAZY TO GET THIS DONE   DO LATER NEED MORE TIME ---------

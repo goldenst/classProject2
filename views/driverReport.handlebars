@@ -7,12 +7,13 @@
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-      var sum = 92;
+      var sum = {{aaa_paid_sac}}
+      
+
 
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['CPS', sum],
-        ['Driver', 95],
+        ['Driver', sum],
         ['Overall', 68],
         ['Responce', 82]
 
@@ -38,11 +39,10 @@
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-      var sum = 92;
+    
 
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
-        ['CPS', sum],
         ['Driver', 105],
         ['Overall', 68],
         ['Responce', 82]
@@ -209,38 +209,38 @@
   </div>
     <div class="row">
     <div class="col-sm">
-      <p>Battery Installs Sac <br> 151</p>
+      <p>Battery Sales Sac <br> ${{battery_sales_sac}}</p>
     </div>
     <div class="col-sm">
-      <p>Battery Installs Yuba <br> 133</p>
+      <p>Battery Installs Yuba <br>${{battery_sales_yuba}}</p>
     </div>
     <div class="col-sm">
-      <P>shop Calls Sac <br> 513</P>
+      <P>Non AAA Revinue Sac <br> ${{non_aaa_rev_sac}}</P>
     </div>
     <div class="col-sm">
-      <p>Shop Calls Yuba <br>12</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      <p>Battery Installs Sac <br> 151</p>
-    </div>
-    <div class="col-sm">
-      <p>Battery Installs Yuba <br> 133</p>
-    </div>
-    <div class="col-sm">
-      <P>shop Calls Sac <br> 513</P>
-    </div>
-    <div class="col-sm">
-      <p>Shop Calls Yuba <br>12</p>
+      <p>Non AAA Revinue Yuba <br>${{non_aaa_rev_yuba}}</p>
     </div>
   </div>
   <div class="row">
     <div class="col-sm">
-      <p>PD Calls Sac <br> 151</p>
+      <p>Battery Installs Sac <br> {{battery_installs_sac}}</p>
     </div>
     <div class="col-sm">
-      <p>PD Cals Yuba <br> 13</p>
+      <p>Battery Installs Yuba <br> {{battery_installs_yuba}}</p>
+    </div>
+    <div class="col-sm">
+      <P>shop Calls Sac <br> {{shop_calls_sac}}</P>
+    </div>
+    <div class="col-sm">
+      <p>Shop Calls Yuba <br>{{shop_calls_yuba}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <p>PD Calls Sac <br> {{pd_calls_sac}}</p>
+    </div>
+    <div class="col-sm">
+      <p>PD Cals Yuba <br> {{pd_calls_yuba}}</p>
     </div>
     <div class="col-sm">
       <P>Avg Calls per Day Sac <br> 50.2</P>
