@@ -105,12 +105,12 @@ module.exports = function (app) {
 
 
   // ----------------------------------------- Daily Work -------------------------
-  // counts records
-  // app.get("/api/dailylog", function (req, res) {
-  //   db.Daily.count({attributes: ["aaa_paid_sac"] }).then(function (dbDaily) {
-  //     res.json(dbDaily);
-  //   });
-  // });
+  //counts records
+  app.get("/api/daily", function (req, res) {
+    db.Daily.findAll().then(function (dbDaily) {
+      res.json(dbDaily);
+    });
+  });
 
   // app.get("/api/dailylog", function (req, res) {
   //   db.Daily.sum("aaa_paid_sac").then(function (sum) {
@@ -126,17 +126,14 @@ module.exports = function (app) {
     var attributes = db.Daily.rawAttributes;
     var columnNames = Object.keys(attributes);
 
-    var results = [];
+    var results = {};
     for (const col of columnNames){
       let sum = await db.Daily.sum(col);
         console.log(col);
-        results.push({
-          col: col,
-          sum: sum,
-        });
+        results[col] = sum;
+       
     }
     console.log(results);
-    
     res.json(results);
   });
 

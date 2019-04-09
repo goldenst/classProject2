@@ -37,7 +37,8 @@
     </div>
   </div>
   <!--To display some PDR data-->
-  <h5>PDR data:</h5>
+  <div class="container">
+<h5>PDR data:</h5>
         <ul id="pdr-list" class="list-group">
           {{#each pdr}}
           <li data-id="{{this.id}}" class="list-group-item">
@@ -48,3 +49,5 @@
           </li>
           {{/each}}
         </ul>
+  </div>
+  

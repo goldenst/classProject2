@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     }).then(function (res) {
       console.log(res);
-      //location.reload();
+      location.reload();
     });
   });
 

@@ -12,7 +12,7 @@
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
         ['CPS', sum],
-        ['Driver', 105],
+        ['Driver', 95],
         ['Overall', 68],
         ['Responce', 82]
 
@@ -20,7 +20,7 @@
       ]);
 
       var options = {
-        width: 400, height: 120,
+        width:500, height: 120,
         greenFrom: 90, greenTo: 100,
         yellowFrom: 75, yellowTo: 90,
         minorTicks: 5
@@ -51,7 +51,7 @@
       ]);
 
       var options = {
-        width: 400, height: 120,
+        width: 500, height: 120,
         greenFrom: 90, greenTo: 100,
         yellowFrom: 75, yellowTo: 90,
         minorTicks: 5
@@ -69,11 +69,11 @@
      
     <div class="row-1">
      
-      <div id="chart_div" style="width: 450px; height: 120px;"></div>
+      <div id="chart_div" style="width: 600px; height: 150px;"></div>
     </div>
     <div class="row">
       
-      <div id="chart_div1" style="width: 450px; height: 120px;"></div>
+      <div id="chart_div1" style="width: 600px; height: 150px;"></div>
     </div>
   </div>
 
@@ -167,23 +167,23 @@
     }
 
 
-    var sum3 = 2588;
-
   </script>
   <div class="container">
   <div class="row">
     <div class="col-4">
+      1
       <div id="curve_chart0" style="width: 250px; height: 150px"></div>
     </div>
     <div class="col-4">
+      2
       <div id="curve_chart1" style="width: 250px; height: 150px"></div>
     </div>
     <div class="col-4">
+      3
       <div id="curve_chart2" style="width: 250px; height: 150px"></div>
     </div>
   </div>
   </div>
-  
 
 
   <BR>
@@ -195,16 +195,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <p>AAA Calls Sac <br> 4689</p>
+      <p>AAA Calls Sac <br> {{aaa_paid_sac}}</p>
     </div>
     <div class="col-sm">
-      <p>AAA Calls Yuba <br> 3915</p>
+      <p>AAA Calls Yuba <br> {{aaa_paid_yuba}}</p>
     </div>
     <div class="col-sm">
-      <P>AAA Rev Sac <br> $ 290,164</P>
+      <P>AAA Rev Sac <br> ${{aaa_sac_rev}}</P>
     </div>
     <div class="col-sm">
-      <p>AAA Rev Yuba <br>$ 259,065</p>
+      <p>AAA Rev Yuba <br>${{aaa_yuba_rev}}</p>
     </div>
   </div>
     <div class="row">
@@ -251,3 +251,4 @@
   </div>
 </div>
 </div>
+

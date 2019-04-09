@@ -97,9 +97,10 @@
   <!--To display some log data-->
 
   {{!-- fix  --}}
-  <h5>Driver Log Submitted:</h5>
+  <div class="container">
+    <h5>Driver Log Submitted:</h5>
         <ul id="pdr-list" class="list-group">
-          {{#each driverlog}}
+          {{#each driverLog}}
           <li data-id="{{this.id}}" class="list-group-item">
             <span>
             <p id="driver-{{this.id}}">Driver: {{this.driver}}  | Call Number: {{this.aaa_call_num}} |  Date: {{this.date}} | Requested By {{this.req_by}}</p>
@@ -108,3 +109,5 @@
           </li>
           {{/each}}
         </ul>
+  </div>
+ 
