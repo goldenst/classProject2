@@ -1,30 +1,7 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  // Get all examples
-  app.get("/api/examples", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
-      res.json(dbExamples);
-    });
-  });
 
-  // Create a new example
-  app.post("/api/examples", function (req, res) {
-    db.Example.create(req.body).then(function (dbExample) {
-      res.json(dbExample);
-    });
-  });
-
-  // Delete an example by id
-  app.delete("/api/examples/:id", function (req, res) {
-    db.Example.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function (dbExample) {
-      res.json(dbExample);
-    });
-  });
   //  ----------------------------------------------- PDR ROUTES -----------------------------
   // Get all Pdr data
   app.get("/api/Pdr", function (req, res) {
@@ -34,7 +11,7 @@ module.exports = function (app) {
   });
 
   // Create a new Pdr entry
-  app.post("/api/Pdr", function (req, res) {
+  app.post("/api/Pdr/create", function (req, res) {
     db.Pdr.create(req.body).then(function (dbPdr) {
       res.json(dbPdr);
     });
@@ -78,14 +55,14 @@ module.exports = function (app) {
     });
   // ---------------------------------------------Driver log routes ---------------------------
   // Get all driver log data
-  app.get("/api/driverlog", function (req, res) {
+  app.get("/api/Driverlog", function (req, res) {
     db.Driver_log.findAll().then(function (dbDriver_log) {
       res.json(dbDriver_log);
     });
   });
 
   // Create a new driver log entry
-  app.post("/api/Driverlog", function (req, res) {
+  app.post("/api/Driverlog/create", function (req, res) {
     db.Driver_log.create(req.body).then(function (dbDriver_log) {
       res.json(dbDriver_log);
     });
@@ -167,7 +144,7 @@ module.exports = function (app) {
   //  ---------------------- AAA icp reports  IM CRAZY TO GET THIS DONE   DO LATER NEED MORE TIME ---------
 
   app.get("/api/reports", function (req, res) {
-    db.aaa_icp.findAll().then(function (dbaaa_icp) {
+    db.DriverSats.findAll().then(function (dbaaa_icp) {
       res.json(dbaaa_icp);
     });
   });

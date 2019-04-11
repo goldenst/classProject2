@@ -31,8 +31,9 @@ $(document).ready(function () {
     var newDispErr = $("#dispErrors").val().trim();
     var NewNoUpdate = $("#noUpdate").val().trim();
 
-    $.post("/api/daily/create", {
-
+    $.ajax("/api/daily/create", {
+      type: "POST",
+      data: {
       date: newDate,
       aaa_paid_sac: newAaasac,
       aaa_paid_yuba: newAaayuba,
@@ -59,7 +60,7 @@ $(document).ready(function () {
       driver_clearing_err: newDriverErr,
       dispatch_clearing_err: newDispErr,
       not_updating_member: NewNoUpdate
-
+      }
     }).then(function (res) {
       console.log(res);
       location.reload();

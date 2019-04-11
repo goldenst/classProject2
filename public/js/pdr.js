@@ -10,7 +10,7 @@ $(document).ready(function () {
     var newDamages = $("#damages").val().trim();
     var newSignature = $("#signature").val().trim();
 
-    $.ajax("/pdr/create", {
+    $.ajax("api/Pdr/create", {
       type: "POST",
       data: {
         aaa_call_num: newCallNum,

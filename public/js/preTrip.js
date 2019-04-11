@@ -49,7 +49,7 @@ $(document).ready(function () {
     var newComment = $("#remarks").val().trim(),
 
 
-    $.ajax("/pretrip/create", {
+    $.post("/pretrip/create", {
       type: "POST",
       data: {
         // database spell  - new var

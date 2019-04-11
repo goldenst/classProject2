@@ -22,7 +22,7 @@ $(document).ready(function () {
     var newCharge = $("#excharg").val().trim();
 
     
-    $.ajax("/driverlog/create", {
+    $.ajax("api/Driverlog/create", {
       type: "POST",
       data: {
         driver: newDriver,

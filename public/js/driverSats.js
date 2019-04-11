@@ -14,7 +14,7 @@ $(document).ready(function () {
     var newYubaRes = $("#yuba_responce").val().trim()
     
 
-    $.ajax("/pdr/create", {
+    $.post("/pdr/create", {
       type: "POST",
       data: {
         cps_sac: newSacCps,

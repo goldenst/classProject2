@@ -7,29 +7,30 @@
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-      var sum = {{aaa_paid_sac}}
       
+    var cps_sac = 20
 
 
-      var data = google.visualization.arrayToDataTable([
-        ['Label', 'Value'],
-        ['Driver', sum],
-        ['Overall', 68],
-        ['Responce', 82]
+
+    var data = google.visualization.arrayToDataTable([
+      ['Label', 'Value'],
+      ['Driver', cps_sac],
+      ['Overall', 68],
+      ['Responce', 82]
 
 
-      ]);
+    ]);
 
-      var options = {
-        width:500, height: 120,
-        greenFrom: 90, greenTo: 100,
-        yellowFrom: 75, yellowTo: 90,
-        minorTicks: 5
-      };
+    var options = {
+      width: 500, height: 120,
+      greenFrom: 90, greenTo: 100,
+      yellowFrom: 75, yellowTo: 90,
+      minorTicks: 5
+    };
 
-      var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+    var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
-      chart.draw(data, options);
+    chart.draw(data, options);
     }
   </script>
 
@@ -39,7 +40,7 @@
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-    
+
 
       var data = google.visualization.arrayToDataTable([
         ['Label', 'Value'],
@@ -62,17 +63,17 @@
       chart.draw(data, options);
     }
   </script>
-<label>Sat Scores Sac</label>
-    <label>Sat Scores Yuba</label>
+  <label>Sat Scores Sac</label>
+  <label>Sat Scores Yuba</label>
 
   <div class="container">
-     
+
     <div class="row-1">
-     
+
       <div id="chart_div" style="width: 600px; height: 150px;"></div>
     </div>
     <div class="row">
-      
+
       <div id="chart_div1" style="width: 600px; height: 150px;"></div>
     </div>
   </div>
@@ -84,7 +85,7 @@
   {{!-- ===============================line graph===================================================== --}}
   <hr>
 
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawChart);
@@ -110,7 +111,7 @@
     }
 
   </script>
-{{!-- =======================================================================================
+  {{!-- =======================================================================================
  --}}
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });
@@ -136,7 +137,7 @@
       chart.draw(data, options);
     }
 
-
+    var jan = 34564;
     var sum3 = 2588;
 
   </script>
@@ -169,20 +170,20 @@
 
   </script>
   <div class="container">
-  <div class="row">
-    <div class="col-4">
-      1
-      <div id="curve_chart0" style="width: 250px; height: 150px"></div>
+    <div class="row">
+      <div class="col-4">
+        1
+        <div id="curve_chart0" style="width: 250px; height: 150px"></div>
+      </div>
+      <div class="col-4">
+        2
+        <div id="curve_chart1" style="width: 250px; height: 150px"></div>
+      </div>
+      <div class="col-4">
+        3
+        <div id="curve_chart2" style="width: 250px; height: 150px"></div>
+      </div>
     </div>
-    <div class="col-4">
-      2
-      <div id="curve_chart1" style="width: 250px; height: 150px"></div>
-    </div>
-    <div class="col-4">
-      3
-      <div id="curve_chart2" style="width: 250px; height: 150px"></div>
-    </div>
-  </div>
   </div>
 
 
@@ -207,7 +208,7 @@
       <p>AAA Rev Yuba <br>${{aaa_yuba_rev}}</p>
     </div>
   </div>
-    <div class="row">
+  <div class="row">
     <div class="col-sm">
       <p>Battery Sales Sac <br> ${{battery_sales_sac}}</p>
     </div>
@@ -251,4 +252,3 @@
   </div>
 </div>
 </div>
-

@@ -1,5 +1,6 @@
 var db = require("../models");
-var reports = require ('../dbUtil/reports')
+var reports = require ('../dbUtil/reports');
+
 
 module.exports = function (app) {
   // Load index page
@@ -8,8 +9,9 @@ module.exports = function (app) {
       res.render("signin", {
         msg: "Welcome!",
         examples: dbExamples
-      });
+      });  
     });
+    
   });
 
   // Load example page and pass in an example by id
@@ -147,6 +149,7 @@ module.exports = function (app) {
 
   // -------------------------------------------------Load driver reports page
   app.get("/reports", function (req, res) {
+    console.log("helo")
     reports().then(function(data){
       //console.log('DATA**********************', data);
       res.render("driverReport", data);
@@ -161,5 +164,17 @@ module.exports = function (app) {
   // -------------------------------------------------Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
+  });
+
+  app.get("/signin", function (req, res) {
+    res.render("signin", {});
+  });
+
+  app.get("/signup", function (req, res) {
+    res.render("signup", {});
+  });
+
+  app.get("/dashboard", function (req, res) {
+    res.render("dashboard", {});
   });
 };
