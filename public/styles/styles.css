@@ -82,5 +82,14 @@ td {
   margin-right: 0px;
 }
 
+.sac_lable {
+  float: left;
+  margin-left: 100px;
+}
+
+.yuba_lable {
+  float: clear;
+  margin-left: 500px;
+}
 
 /* ===============================  login modal */

@@ -37,7 +37,7 @@ module.exports = function (app) {
     });
   
     // Create a new pre Trip entry
-    app.post("/api/PreTrip", function (req, res) {
+    app.post("/api/PreTrip/create", function (req, res) {
       db.PreTrip.create(req.body).then(function (dbPreTrip) {
         res.json(dbPreTrip);
       });
@@ -138,6 +138,7 @@ module.exports = function (app) {
   app.get("/api/driversats", function (req, res) {
     db.DriverSats.findAll().then(function (dbDriverSats) {
       res.json(dbDriverSats);
+      console.log(dbDriverSats)
     });
   });
 

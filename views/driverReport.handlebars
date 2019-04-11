@@ -1,5 +1,7 @@
 <div class="container">
   <h3>YTD Trends and Charts</h3>
+  <br>
+  <hr>
 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
@@ -7,30 +9,29 @@
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-      
-    var cps_sac = 20
 
 
 
-    var data = google.visualization.arrayToDataTable([
-      ['Label', 'Value'],
-      ['Driver', cps_sac],
-      ['Overall', 68],
-      ['Responce', 82]
+
+      var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Driver', 99],
+        ['Overall', 55],
+        ['Responce', 82]
 
 
-    ]);
+      ]);
 
-    var options = {
-      width: 500, height: 120,
-      greenFrom: 90, greenTo: 100,
-      yellowFrom: 75, yellowTo: 90,
-      minorTicks: 5
-    };
+      var options = {
+        width: 500, height: 120,
+        greenFrom: 90, greenTo: 100,
+        yellowFrom: 75, yellowTo: 90,
+        minorTicks: 5
+      };
 
-    var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+      var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
-    chart.draw(data, options);
+      chart.draw(data, options);
     }
   </script>
 
@@ -63,8 +64,15 @@
       chart.draw(data, options);
     }
   </script>
-  <label>Sat Scores Sac</label>
-  <label>Sat Scores Yuba</label>
+  <div class="sac_lable">
+    
+    <h5>Sacrameno Sat Scores</h5>
+  </div>
+  <div class="yuba_lable">
+    <h5>Yuba City Sat Scores</h5>
+  </div>
+
+
 
   <div class="container">
 
@@ -86,7 +94,7 @@
   <hr>
 
 
-  <script type="text/javascript">
+  {{!-- <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawChart);
 
@@ -111,8 +119,7 @@
     }
 
   </script>
-  {{!-- =======================================================================================
- --}}
+  
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(drawChart);
@@ -141,7 +148,7 @@
     var sum3 = 2588;
 
   </script>
-  {{!-- ========================================================================================= --}}
+
 
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });
@@ -168,8 +175,9 @@
     }
 
 
-  </script>
-  <div class="container">
+  </script> --}}
+
+  {{!-- <div class="container">
     <div class="row">
       <div class="col-4">
         1
@@ -189,66 +197,68 @@
 
   <BR>
   <hr>
-</div>
-{{!-- =================================================== box data ==================================================== --}}
+</div> --}}
+
+  {{!-- ========
+=========================================== box data ==================================================== --}}
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <p>AAA Calls Sac <br> {{aaa_paid_sac}}</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <p>AAA Calls Sac <br> {{aaa_paid_sac}}</p>
+      </div>
+      <div class="col-sm">
+        <p>AAA Calls Yuba <br> {{aaa_paid_yuba}}</p>
+      </div>
+      <div class="col-sm">
+        <P>AAA Rev Sac <br> ${{aaa_sac_rev}}</P>
+      </div>
+      <div class="col-sm">
+        <p>AAA Rev Yuba <br>${{aaa_yuba_rev}}</p>
+      </div>
     </div>
-    <div class="col-sm">
-      <p>AAA Calls Yuba <br> {{aaa_paid_yuba}}</p>
+    <div class="row">
+      <div class="col-sm">
+        <p>Battery Sales Sac <br> ${{battery_sales_sac}}</p>
+      </div>
+      <div class="col-sm">
+        <p>Battery Installs Yuba <br>${{battery_sales_yuba}}</p>
+      </div>
+      <div class="col-sm">
+        <P>Non AAA Revinue Sac <br> ${{non_aaa_rev_sac}}</P>
+      </div>
+      <div class="col-sm">
+        <p>Non AAA Revinue Yuba <br>${{non_aaa_rev_yuba}}</p>
+      </div>
     </div>
-    <div class="col-sm">
-      <P>AAA Rev Sac <br> ${{aaa_sac_rev}}</P>
+    <div class="row">
+      <div class="col-sm">
+        <p>Battery Installs Sac <br> {{battery_installs_sac}}</p>
+      </div>
+      <div class="col-sm">
+        <p>Battery Installs Yuba <br> {{battery_installs_yuba}}</p>
+      </div>
+      <div class="col-sm">
+        <P>shop Calls Sac <br> {{shop_calls_sac}}</P>
+      </div>
+      <div class="col-sm">
+        <p>Shop Calls Yuba <br>{{shop_calls_yuba}}</p>
+      </div>
     </div>
-    <div class="col-sm">
-      <p>AAA Rev Yuba <br>${{aaa_yuba_rev}}</p>
+    <div class="row">
+      <div class="col-sm">
+        <p>PD Calls Sac <br> {{pd_calls_sac}}</p>
+      </div>
+      <div class="col-sm">
+        <p>PD Cals Yuba <br> {{pd_calls_yuba}}</p>
+      </div>
+      <div class="col-sm">
+        <P>Avg Calls per Day Sac <br> 50.2</P>
+      </div>
+      <div class="col-sm">
+        <p>Avg Calls per Day Yuba <br>48.6</p>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm">
-      <p>Battery Sales Sac <br> ${{battery_sales_sac}}</p>
-    </div>
-    <div class="col-sm">
-      <p>Battery Installs Yuba <br>${{battery_sales_yuba}}</p>
-    </div>
-    <div class="col-sm">
-      <P>Non AAA Revinue Sac <br> ${{non_aaa_rev_sac}}</P>
-    </div>
-    <div class="col-sm">
-      <p>Non AAA Revinue Yuba <br>${{non_aaa_rev_yuba}}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      <p>Battery Installs Sac <br> {{battery_installs_sac}}</p>
-    </div>
-    <div class="col-sm">
-      <p>Battery Installs Yuba <br> {{battery_installs_yuba}}</p>
-    </div>
-    <div class="col-sm">
-      <P>shop Calls Sac <br> {{shop_calls_sac}}</P>
-    </div>
-    <div class="col-sm">
-      <p>Shop Calls Yuba <br>{{shop_calls_yuba}}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      <p>PD Calls Sac <br> {{pd_calls_sac}}</p>
-    </div>
-    <div class="col-sm">
-      <p>PD Cals Yuba <br> {{pd_calls_yuba}}</p>
-    </div>
-    <div class="col-sm">
-      <P>Avg Calls per Day Sac <br> 50.2</P>
-    </div>
-    <div class="col-sm">
-      <p>Avg Calls per Day Yuba <br>12</p>
-    </div>
-  </div>
-</div>
 </div>
