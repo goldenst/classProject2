@@ -115,7 +115,7 @@ $(document).ready(function () {
 
     $.ajax({
       method: "DELETE",
-      url: "/pretrip/destroy/" + thisId
+      url: "/PreTrip/destroy/" + thisId
     }).then(function (response) {
       location.reload();
     });

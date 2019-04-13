@@ -142,8 +142,13 @@ module.exports = function (app) {
   });
 
   // ------------------------------------------------- Load Pre Trip page
-  app.get("/preTrip", function (req, res) {
+  app.get("/PreTrip", function (req, res) {
     res.render("preTrip", {});
+  });
+
+   // ------------------------------------------------- Load Vehicle Specs page
+   app.get("/specs", function (req, res) {
+    res.render("specs", {});
   });
 
 

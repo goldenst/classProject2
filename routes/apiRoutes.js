@@ -30,7 +30,7 @@ module.exports = function (app) {
 
   // ------------------------------------- pre trip -------------------------------------
     // Get all Pre Trip data
-    app.get("/api/pretrip", function (req, res) {
+    app.get("/api/PreTrip", function (req, res) {
       db.PreTrip.findAll().then(function (dbPreTrip) {
         res.json(dbPreTrip);
       });

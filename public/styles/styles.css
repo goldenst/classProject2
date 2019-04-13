@@ -2,8 +2,17 @@
   line-height: 2.5;
 }
 
-body {
-  text-align: center;
+body, html {
+  height: 100%;
+  background-color: darkgrey;
+}
+
+
+
+#duck{
+  float: left;
+  margin: 20px;
+  height: 150px;
 }
 
 .container-inner {
@@ -17,6 +26,13 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   align-content: center;
+}
+
+#nav {
+  margin-left: 8.8%;
+  padding: 0;
+  align-content: center;
+  text-align: center;
 }
 
 .daily-date {
@@ -92,4 +108,7 @@ td {
   margin-left: 500px;
 }
 
+.navbar {
+  margin: 0;
+}
 /* ===============================  login modal */
