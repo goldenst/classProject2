@@ -44,10 +44,10 @@ var authRoute = require('./routes/auth.js')(app, passport);
 
 //load passport strategies
 require('./config/passport/passport.js')(passport, models.user);
- 
+var PORT = process.env.PORT || 3000;
 // Sync Database and listen to local server
 models.sequelize.sync().then(function() {
-    app.listen(3000, function(err) {
+    app.listen(PORT, function(err) {
         console.log("Server is running on 3000 and database looks fine")
     }) 
 }).catch(function(err) { 
