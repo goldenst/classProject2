@@ -105,7 +105,7 @@ module.exports = function (app) {
     db.Daily.findAll().then(function (dbDaily) {
      // console.log(dbDaily)
       res.render("dailyWork", {
-        dailyWork: dbgiily
+        dailyWork: dbDaily
       });
     });
   });
